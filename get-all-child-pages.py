@@ -38,7 +38,7 @@ def crawl_page(url, visited_urls, child_urls, original_url):
             absolute_url = urljoin(url, href)
 
             # Check if the parsed URL is a substring of the original domain
-            if absolute_url.startswith(original_url):
+            if absolute_url and absolute_url.startswith(original_url):
                 # Check if the absolute URL is not already visited
                 if absolute_url not in visited_urls:
                     # Add the absolute URL to the child_urls list
